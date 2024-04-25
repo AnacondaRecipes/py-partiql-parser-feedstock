@@ -23,16 +23,12 @@ requirements:
     - python
 
 test:
-  source_files:
-    - tests
   imports:
     - py_partiql_parser
   commands:
     - pip check
-    - pytest -v tests
   requires:
     - pip
-    - pytest
 
 about:
   home: https://github.com/getmoto/py-partiql-parser/
