@@ -1,18 +1,18 @@
 {% set name = "py-partiql-parser" %}
-{% set version = "0.5.4" %}
+{% set version = "0.6.3" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/py_partiql_parser-{{ version }}.tar.gz
-  sha256: 72e043919538fa63edae72fb59afc7e3fd93adbde656718a7d2b4666f23dd114
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/py_partiql_parser-{{ version }}.tar.gz
+  sha256: 09cecf916ce6e3da2c050f0cb6106166de42c33d34a078ec2eb19377ea70389a
 
 build:
-  skip: true # [py<37]
+  skip: true  # [py<37]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
