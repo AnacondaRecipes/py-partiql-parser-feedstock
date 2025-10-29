@@ -34,12 +34,12 @@ test:
     - pytest
 
 about:
-  home: https://github.com/getmoto/py-partiql-parser/
+  home: https://github.com/getmoto/py-partiql-parser
   summary: Pure Python PartiQL Parser
   description: |
     A tokenizer/parser/executor for the PartiQL-language, in Python.
-  dev_url: https://github.com/getmoto/py-partiql-parser/
-  doc_url: https://github.com/getmoto/py-partiql-parser/
+  dev_url: https://github.com/getmoto/py-partiql-parser
+  doc_url: https://github.com/getmoto/py-partiql-parser
   license: MIT
   license_family: MIT
   license_file: LICENSE
