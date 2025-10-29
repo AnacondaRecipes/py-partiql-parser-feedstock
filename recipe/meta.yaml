@@ -1,18 +1,17 @@
 {% set name = "py-partiql-parser" %}
-{% set version = "0.5.4" %}
+{% set version = "0.6.3" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/py_partiql_parser-{{ version }}.tar.gz
-  sha256: 72e043919538fa63edae72fb59afc7e3fd93adbde656718a7d2b4666f23dd114
+  url: https://github.com/getmoto/{{ name }}/archive/refs/tags/{{ version }}.tar.gz
+  sha256: 14a9904b922a3ec8f7b99dfcb0fd911c25e01458b8dc67114eaebcaa5e7d08d7
 
 build:
-  skip: true # [py<37]
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
 
 requirements:
   host:
@@ -23,20 +22,24 @@ requirements:
     - python
 
 test:
+  source_files:
+    - tests
   imports:
     - py_partiql_parser
   commands:
     - pip check
+    - pytest -v tests
   requires:
     - pip
+    - pytest
 
 about:
-  home: https://github.com/getmoto/py-partiql-parser/
+  home: https://github.com/getmoto/py-partiql-parser
   summary: Pure Python PartiQL Parser
   description: |
     A tokenizer/parser/executor for the PartiQL-language, in Python.
-  dev_url: https://github.com/getmoto/py-partiql-parser/
-  doc_url: https://github.com/getmoto/py-partiql-parser/
+  dev_url: https://github.com/getmoto/py-partiql-parser
+  doc_url: https://github.com/getmoto/py-partiql-parser
   license: MIT
   license_family: MIT
   license_file: LICENSE
